@@ -3,10 +3,12 @@
 CONTAINER_NAME="$(basename $(pwd))"
 
 while (true); do
-  docker run -it --rm \
+  docker run --interactive --tty --rm \
     --name $CONTAINER_NAME \
-    -p 6682:6682 \
+    --hostname $CONTAINER_NAME \
+    --publish 6682:6682 \
     nota ./start.sh
+  echo "restarting docker container in 2 seconds"
   sleep 2
 done
 

@@ -1,6 +1,7 @@
 FROM archlinux
-RUN pacman -Sy --noconfirm which nodejs npm msmtp
 COPY files /
-RUN ./install.sh
+RUN pacman -Sy --noconfirm which nodejs npm msmtp && \
+  ./install.sh && \
+  rm -rf /var/cache/pacman/pkg
 EXPOSE 54783
 

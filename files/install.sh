@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Emailskript in den Pfad schieben
-mv -v send_email /usr/local/bin
-mv -v source_std logging /usr/local/sbin
+mv -v send_email /usr/local/bin/
+mv -v source_std logging /usr/local/sbin/
 
 # msmtp konfigurieren
 mv -v msmtprc /etc/
